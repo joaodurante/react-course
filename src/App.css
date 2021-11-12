@@ -11,3 +11,36 @@
   padding: 1rem;
   margin-bottom: 2rem;
 }
+
+.task-form {
+  margin-bottom: 2rem;
+}
+
+.task-description {
+  width: 85%;
+}
+
+.complete-button {
+  width: 15%;
+}
+
+.user-info {
+  margin-left: auto;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.user-info:hover {
+  cursor:pointer;
+  background-color:aliceblue;
+}
+
+.user-icon {
+  margin-right: 0.8rem;
+  font-size: 1.5rem;
+}
+
+.user-name {
+  font-size: 1rem;
+}

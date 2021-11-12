@@ -16,12 +16,12 @@ function TaskForm(props) {
     }
 
     return(
-        <Form onSubmit={handleFormSubmit}>
+        <Form className="task-form" onSubmit={handleFormSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>New task</Form.Label>
                 <Form.Control type="text" autoComplete="off" placeholder="Enter your task description" value={task.description} onChange={handleInputTaskChange} />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="dark" type="submit">
                 Create task!
             </Button>
         </Form>

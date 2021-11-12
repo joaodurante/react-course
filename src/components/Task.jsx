@@ -9,9 +9,9 @@ function Task(props) {
 
     return (
         <tr>
-            <td>{props.task.description}</td>
-            <td>
-                <Button variant="light" onClick={handleCompleteButtonClick}>Complete Task</Button>
+            <td className="task-description">{props.task.description}</td>
+            <td className="complete-button">
+                <Button variant="outline-success" onClick={handleCompleteButtonClick}>Complete Task</Button>
             </td>
         </tr>
     )

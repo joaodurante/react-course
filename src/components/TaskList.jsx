@@ -3,7 +3,7 @@ import Task from './Task';
 
 function TaskList(props) {
     return(
-        <Table hover>
+        <Table className="task-list" hover>
             <tbody>
                 {
                     props.tasks.map(task => {
