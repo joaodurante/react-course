@@ -4,18 +4,26 @@ import TaskList from './TaskList';
 
 function Body() {
     const [tasks, setTasks] = useState([]);
-    const [doneTasksCounter, setDoneTasksCounter] = useState(0);
+    const [doneTasks, setDoneTasks] = useState([]);
+    const [tasksCounter, setTasksCounter] = useState(0);
 
     const handleNewTask = (task) => {
-        setTasks(prevState => [...prevState, {id: tasks.length, ...task}]);
+        setTasks(prevState => [...prevState, {id: tasksCounter, description: task}]);
+        setTasksCounter(prevState => ++ prevState);
     }
   
     const handleCompleteButtonClick = (taskId) => {
         setTasks(prevState => {
-            prevState[taskId] = {...prevState[taskId], done: true};
-            return prevState;
+            let tempState = [...prevState];
+            let index = tasks.map(task => task.id).indexOf(taskId);
+            tempState.splice(index, 1);
+            return tempState;
         });
-        setDoneTasksCounter(prevState => prevState + 1);
+
+        setDoneTasks(prevState => {
+            let task = tasks.find(task => task.id === taskId);
+            return [...prevState, task];
+        });
     }
 
     return(

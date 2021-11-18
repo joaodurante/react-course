@@ -7,9 +7,7 @@ function TaskList(props) {
             <tbody>
                 {
                     props.tasks.map(task => {
-                        if(task.done === false) {
-                            return <Task key={task.id} task={task} handleCompleteButtonClick={props.handleCompleteButtonClick} />
-                        }
+                        return <Task key={task.id} task={task} handleCompleteButtonClick={props.handleCompleteButtonClick} />
                     })
                 }
             </tbody>
