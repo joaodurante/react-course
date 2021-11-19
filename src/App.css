@@ -33,7 +33,6 @@
 
 .user-info:hover {
   cursor:pointer;
-  background-color:aliceblue;
 }
 
 .user-icon {
@@ -43,4 +42,17 @@
 
 .user-name {
   font-size: 1rem;
+}
+
+.task-details {
+  text-align: center;
+}
+
+.task-details-buttons {
+  margin-top: 4rem;
+}
+
+.details-button {
+  margin-right: 1rem;
+  margin-left: 1rem;
 }

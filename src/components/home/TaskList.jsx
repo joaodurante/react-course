@@ -1,13 +1,13 @@
 import Table from 'react-bootstrap/Table';
 import Task from './Task';
 
-function TaskList(props) {
+function TaskList({tasks, handleCompleteButtonClick}) {
     return(
         <Table className="task-list" hover>
             <tbody>
                 {
-                    props.tasks.map(task => {
-                        return <Task key={task.id} task={task} handleCompleteButtonClick={props.handleCompleteButtonClick} />
+                    tasks.map(task => {
+                        return <Task key={task.id} task={task} handleCompleteButtonClick={handleCompleteButtonClick} />
                     })
                 }
             </tbody>
