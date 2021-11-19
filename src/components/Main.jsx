@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
-import TaskForm from './TaskForm';
-import TaskList from './TaskList';
+import { useState } from 'react';
+import Home from './home/Home';
 
-function Body() {
+function Main() {
     const [tasks, setTasks] = useState([]);
     const [doneTasks, setDoneTasks] = useState([]);
     const [tasksCounter, setTasksCounter] = useState(0);
@@ -26,12 +25,24 @@ function Body() {
         });
     }
 
+    const handleDeleteButtonClick = (taskId) => {
+        setTasks(prevState => {
+            let tempState = [...prevState];
+            let index = tasks.map(task => task.id).indexOf(taskId);
+            tempState.splice(index, 1);
+            return tempState;
+        });
+    }
+
     return(
         <div className="container">
-            <TaskForm handleNewTask={handleNewTask}/>
-            <TaskList tasks={tasks} handleCompleteButtonClick={handleCompleteButtonClick}></TaskList>  
+            <Home 
+                tasks={tasks} 
+                handleNewTask={handleNewTask} 
+                handleCompleteButtonClick={handleCompleteButtonClick}
+            />
         </div>
     );
 }
 
-export default Body;
+export default Main;

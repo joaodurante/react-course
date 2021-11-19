@@ -2,14 +2,14 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-function TaskForm(props) {
+function TaskForm({handleNewTask}) {
     const [task, setTask] = useState('');
     const [validated, setValidated] = useState(false);
 
     const handleFormSubmit = (e) => {
         const form = e.currentTarget;
         if(form.checkValidity() === true) {
-            props.handleNewTask(task);
+            handleNewTask(task);
             setTask('');
             setValidated(false);
         } else {
