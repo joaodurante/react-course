@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import Home from './home/Home';
+import TaskDetails from './details/TaskDetails';
+import { Switch, Route } from 'react-router-dom';
 
 function Main() {
     const [tasks, setTasks] = useState([]);
     const [doneTasks, setDoneTasks] = useState([]);
     const [tasksCounter, setTasksCounter] = useState(0);
+
+    const findTaskById = (taskId) => {
+        return tasks.find(task => task.id === taskId);
+    }
 
     const handleNewTask = (task) => {
         setTasks(prevState => [...prevState, {id: tasksCounter, description: task}]);
@@ -20,7 +26,7 @@ function Main() {
         });
 
         setDoneTasks(prevState => {
-            let task = tasks.find(task => task.id === taskId);
+            let task = findTaskById(taskId);
             return [...prevState, task];
         });
     }
@@ -36,11 +42,19 @@ function Main() {
 
     return(
         <div className="container">
-            <Home 
-                tasks={tasks} 
-                handleNewTask={handleNewTask} 
-                handleCompleteButtonClick={handleCompleteButtonClick}
-            />
+            <Switch>
+                <Route path="/" exact>
+                    <Home tasks={tasks}
+                        handleNewTask={handleNewTask}
+                        handleCompleteButtonClick={handleCompleteButtonClick}/>
+                </Route>
+                <Route path="/task/:id">
+                    <TaskDetails tasks={tasks} 
+                        handleCompleteButtonClick={handleCompleteButtonClick}
+                        handleDeleteButtonClick={handleDeleteButtonClick} />
+                </Route>
+            </Switch>
+
         </div>
     );
 }

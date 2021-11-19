@@ -1,10 +1,13 @@
 import User from './User';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
     return(
         <div className="main-header">
-            <h1 className="app-title">
-                <b>toDo</b>App
+            <h1>
+                <NavLink className="app-title" to="/">
+                    <b>toDo</b>App
+                </NavLink>
             </h1>
             <User />
         </div>

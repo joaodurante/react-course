@@ -12,6 +12,17 @@
   margin-bottom: 2rem;
 }
 
+.app-title {
+  margin-left: 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.app-title:hover {
+  color: white;
+}
+
 .task-form {
   margin-bottom: 2rem;
 }
@@ -46,6 +57,7 @@
 
 .task-details {
   text-align: center;
+  margin-top: 1rem;
 }
 
 .task-details-buttons {
@@ -55,4 +67,8 @@
 .details-button {
   margin-right: 1rem;
   margin-left: 1rem;
+}
+
+.return-button {
+  cursor: pointer;
 }
