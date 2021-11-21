@@ -1,4 +1,6 @@
+import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import './Home.css';
 
 function Task({task, handleCompleteButtonClick}) {
     const handleButtonClick = (e) => {
@@ -8,10 +10,12 @@ function Task({task, handleCompleteButtonClick}) {
 
     return (
         <tr>
-            <td className="task-description">{task.description}</td>
-            <td className="complete-button">
-                <Button variant="outline-success" onClick={handleButtonClick}>Complete Task</Button>
-            </td>
+            <NavLink to={`/task/${task.id}`} className="task-row">
+                <td className="task-title">{task.title}</td>
+                <td className="complete-button">
+                    <Button variant="outline-success" onClick={handleButtonClick}>Complete!</Button>
+                </td>
+            </NavLink>
         </tr>
     )
 }

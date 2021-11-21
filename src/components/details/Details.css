@@ -1,0 +1,23 @@
+.task-details {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.task-details-buttons {
+    margin-top: 4rem;
+}
+
+.details-button {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.return-button {
+    cursor: pointer;
+    text-decoration: none;
+    color: #282c34;
+}
+
+.return-button:hover {
+    color: #282c34;
+}

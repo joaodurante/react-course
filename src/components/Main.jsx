@@ -13,7 +13,7 @@ function Main() {
     }
 
     const handleNewTask = (task) => {
-        setTasks(prevState => [...prevState, {id: tasksCounter, description: task}]);
+        setTasks(prevState => [...prevState, {id: tasksCounter, title: task.title, description: task.description}]);
         setTasksCounter(prevState => ++ prevState);
     }
   

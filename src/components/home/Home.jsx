@@ -1,5 +1,6 @@
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
+import './Home.css';
 
 function Home({tasks, handleNewTask, handleCompleteButtonClick}) {
     return(

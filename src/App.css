@@ -23,18 +23,6 @@
   color: white;
 }
 
-.task-form {
-  margin-bottom: 2rem;
-}
-
-.task-description {
-  width: 85%;
-}
-
-.complete-button {
-  width: 15%;
-}
-
 .user-info {
   margin-left: auto;
   margin-right: 2rem;
@@ -53,22 +41,4 @@
 
 .user-name {
   font-size: 1rem;
-}
-
-.task-details {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.task-details-buttons {
-  margin-top: 4rem;
-}
-
-.details-button {
-  margin-right: 1rem;
-  margin-left: 1rem;
-}
-
-.return-button {
-  cursor: pointer;
 }

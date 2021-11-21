@@ -1,0 +1,20 @@
+.task-form {
+    margin-bottom: 2rem;
+}
+
+.task-title {
+    width: 95%;
+    padding-left: 2rem;
+    color: #282c34;
+}
+
+.task-row {
+    display: table-row;
+    text-decoration: none;
+}
+
+.complete-button {
+    width: 5%;
+    height: 500%;
+    padding: 1rem;
+}

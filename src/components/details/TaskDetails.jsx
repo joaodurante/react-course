@@ -1,9 +1,10 @@
 import Button from 'react-bootstrap/Button';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+import './Details.css';
 
 function TaskDetails({tasks, handleCompleteButtonClick, handleDeleteButtonClick}) {
     const params = useParams();
-    const task = tasks.find(task => task.id === params.id);
+    const task = tasks.find(task => task.id == params.id);
 
     if(task !== undefined) {
         return(
@@ -22,7 +23,7 @@ function TaskDetails({tasks, handleCompleteButtonClick, handleDeleteButtonClick}
     } else {
         return(
             <div className="container">
-                <span className="return-button">&#129168; Return</span>
+                <NavLink to="/" className="return-button"><span>&#129168; Return</span></NavLink>
                 <div className="task-details">
                     <h1>Task not found!</h1>
                 </div>
