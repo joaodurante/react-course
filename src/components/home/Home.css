@@ -9,8 +9,7 @@
 }
 
 .task-row {
-    display: table-row;
-    text-decoration: none;
+    text-decoration: pointer;
 }
 
 .complete-button {

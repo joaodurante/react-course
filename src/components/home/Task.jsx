@@ -1,21 +1,25 @@
-import { NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import './Home.css';
 
 function Task({task, handleCompleteButtonClick}) {
+    const history = useHistory();
+
     const handleButtonClick = (e) => {
         e.preventDefault();
         handleCompleteButtonClick(task.id);
     }
 
+    const handleRowClick = () => {
+        history.push(`/task/${task.id}`);
+    }
+
     return (
-        <tr>
-            <NavLink to={`/task/${task.id}`} className="task-row">
-                <td className="task-title">{task.title}</td>
-                <td className="complete-button">
-                    <Button variant="outline-success" onClick={handleButtonClick}>Complete!</Button>
-                </td>
-            </NavLink>
+        <tr className="task-row" onClick={handleRowClick}>
+            <td className="task-title">{task.title}</td>
+            <td className="complete-button">
+                <Button variant="outline-success" onClick={handleButtonClick}>Complete!</Button>
+            </td>
         </tr>
     )
 }
